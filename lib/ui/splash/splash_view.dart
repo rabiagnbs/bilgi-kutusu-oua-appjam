@@ -9,15 +9,32 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<SplashViewModel>.reactive(
         viewModelBuilder: () =>
-            SplashViewModel(), // bir sürü kez değil bir kere create edilsin ve hep aynı instance devam etsin diye: GetIt classını içinde create edilen AppBaseViewModeli kullanıyor olucaz sürekli.
+            SplashViewModel(), 
         onViewModelReady: (viewmodel) => viewmodel
-            .init(), // model ready olduğunda modelden init fonksiyonunu çağır
+            .init(),
         disposeViewModel: false,
-        builder: (context, viewmodel, child) => const Scaffold(
-              body: Center(
-                child: Text(
-                  'Hoşgeldiniz',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        builder: (context, viewmodel, child) => Scaffold(
+              body: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment(0, 1),
+                    end: Alignment(-1, 0),
+                    colors: [
+                      Color.fromRGBO(188, 17, 231, 1),
+                      Color.fromRGBO(105, 9, 129, 1),
+                    ],
+                  ),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Hoşgeldiniz',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Inter',
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ));
