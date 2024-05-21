@@ -1,5 +1,6 @@
 import 'package:bilgi_kutusu_oua_appjam/common/info_box.dart';
 import 'package:bilgi_kutusu_oua_appjam/ui/culture_art/culture_art_page_view_model.dart';
+import 'package:bilgi_kutusu_oua_appjam/ui/technology_science/technology_science_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -10,8 +11,8 @@ class TechnologySciencePageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController searchController = TextEditingController();
 
-    return ViewModelBuilder<CultureArtPageViewModel>.reactive(
-      viewModelBuilder: () => CultureArtPageViewModel(),
+    return ViewModelBuilder<TechnologySciencePageViewModel>.reactive(
+      viewModelBuilder: () => TechnologySciencePageViewModel(),
       disposeViewModel: true,
       builder: (context, viewmodel, child) => SafeArea(
         child: Scaffold(

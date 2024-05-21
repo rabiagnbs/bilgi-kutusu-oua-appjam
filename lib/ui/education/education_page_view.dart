@@ -1,17 +1,22 @@
-import 'package:bilgi_kutusu_oua_appjam/common/info_box.dart';
-import 'package:bilgi_kutusu_oua_appjam/ui/culture_art/culture_art_page_view_model.dart';
+
+import 'package:bilgi_kutusu_oua_appjam/ui/education/education_page_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class EducationPageView extends StatelessWidget {
+class EducationPageView extends StatefulWidget {
   const EducationPageView({Key? key});
 
+  @override
+  State<EducationPageView> createState() => _EducationPageViewState();
+}
+
+class _EducationPageViewState extends State<EducationPageView> {
   @override
   Widget build(BuildContext context) {
     final TextEditingController searchController = TextEditingController();
 
-    return ViewModelBuilder<CultureArtPageViewModel>.reactive(
-      viewModelBuilder: () => CultureArtPageViewModel(),
+    return ViewModelBuilder<EducationPageViewModel>.reactive(
+      viewModelBuilder: () => EducationPageViewModel(),
       disposeViewModel: true,
       builder: (context, viewmodel, child) => SafeArea(
         child: Scaffold(
@@ -67,7 +72,7 @@ class EducationPageView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Container(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(30.0),
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment(0, 1),
@@ -78,11 +83,14 @@ class EducationPageView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    child: Text(
-                      viewmodel.info ?? 'Bilgi yok',
-                      style: const TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
+                    child: SingleChildScrollView(
+                      child: Text(
+                     
+                        viewmodel.info ?? 'Bilgi yok',
+                         textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 14.0,  
+                        ),
                       ),
                     ),
                   ),
