@@ -1,3 +1,4 @@
+Oyun Ve Uygulama Akademisi Bilgi Kutusu isimli AI eklentili App Jam Projemiz: https://www.youtube.com/shorts/WdI2kegP7RY
 # bilgi_kutusu_oua_appjam
 
 A new Flutter project.
